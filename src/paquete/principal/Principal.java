@@ -2,6 +2,9 @@ package paquete.principal;
 
 import java.util.Scanner;
 
+import paquete.principal.Clases.Escolar;
+import paquete.principal.Clases.Estudiante;
+
 public class Principal {
 
 	public static void main(String[] args) {
@@ -43,7 +46,19 @@ public class Principal {
 		
 		// Llamando al método ejemploMetodo
 		ejemploMetodo();
-	}
+		
+		// Ejemplo de uso: Clase Estudiante
+		Estudiante est01;
+		est01 = new Estudiante();
+		est01.setNombre("Arthur");
+		est01.setMatricula(123);
+		System.out.println("Nombre: "+est01.getNombre()+", Matrícula: "+est01.getMatricula());
+		est01.setMatricula(-1);
+		System.out.println("Nombre: "+est01.getNombre()+", Matrícula: "+est01.getMatricula());
+		
+		Escolar e01 = new Escolar();
+		System.out.println("Nombre: "+e01.getNombre()+", Matrícula: "+e01.getMatricula());
+    }
 	public static void ejemploMetodo() {
 		System.out.println("========================");
 		System.out.println("=   MÉTODO EJECUTADO   =");
