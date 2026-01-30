@@ -159,6 +159,7 @@ public class Principal {
 		for(Empleado empAuxiliar : misEmpleados) {
 			System.out.println(empAuxiliar.getItem());
 		}
+		// Pase por referencia vs por valor
 	}
 	public static void ejemploMetodo() {
 		System.out.println("========================");
