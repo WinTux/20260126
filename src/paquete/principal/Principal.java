@@ -1,5 +1,7 @@
 package paquete.principal;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 import paquete.principal.Clases.Empleado;
@@ -94,6 +96,69 @@ public class Principal {
 		estudiante = escolar;
 		escolar = (Escolar) estudiante;
 		
+		estructurasDeDatos();
+		
+	}
+	private static void estructurasDeDatos() {
+		// Arreglo unidensional
+		int[] numeros = new int[4];
+		numeros[0] = 456;
+		numeros[1] = 432;
+		numeros[2] = 272;
+		numeros[3] = 4876456;
+		for(int valorTemporal : numeros) {
+			System.out.println(valorTemporal);
+		}
+		
+		// Arreglo bidimensional
+		String[][] tablero = new String[2][4];//fila,columna
+		tablero[1][3] = "Rojo";
+		tablero[0][0] = "Amarillo";
+		tablero[0][2] = "Verde";
+		System.out.println("RECORRIENDO LA MATRIZ");
+		for(int fila = 0; fila < 2; fila++) {
+			for(int col = 0; col < 4; col++) {
+				System.out.printf("[%d][%d]: %s%n", fila, col, tablero[fila][col]);
+
+			}
+		}
+		
+		// Arreglos multidimensionales
+		String[][][][][] multi = new String[2][3][4][5][6];
+		
+		// Estructuras de datos DINÁMICAS
+		List<String> listaCompras = new LinkedList<>();
+		listaCompras.add("Papel higiénico");
+		listaCompras.add("Shampoo");
+		listaCompras.add("Toallas");
+		System.out.println("ITERANDO SOBRE UN LINKED LIST");
+		for(String elemento : listaCompras) {
+			System.out.println(elemento);
+		}
+		listaCompras.remove("Shampoo");
+		for(int i = 0; i < listaCompras.size();i++) {
+			System.out.println(listaCompras.get(i));
+		}
+		
+		// Ejemplo usando empleados
+		System.out.println("ITERANDO SOBRE UN LINKED LIST de EMPLEADOS");
+		Empleado emp01 = new Empleado(123);
+		
+		List<Empleado> misEmpleados = new LinkedList<>();
+		misEmpleados.add(new Empleado(303));
+		misEmpleados.add(emp01);
+		for(Empleado empAuxiliar : misEmpleados) {
+			System.out.println(empAuxiliar.getItem());
+		}
+		Empleado elQueQuieroEliminar = new Empleado(0);
+		for(int i =0; i< misEmpleados.size();i++) {
+			if(misEmpleados.get(i).getItem() == 303)
+				elQueQuieroEliminar = misEmpleados.get(i);
+		}
+		misEmpleados.remove(elQueQuieroEliminar);
+		for(Empleado empAuxiliar : misEmpleados) {
+			System.out.println(empAuxiliar.getItem());
+		}
 	}
 	public static void ejemploMetodo() {
 		System.out.println("========================");
