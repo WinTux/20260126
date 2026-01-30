@@ -2,10 +2,10 @@ package paquete.principal.Clases;
 
 public class Estudiante {
 	//Abstracción
-	private String nombre;
-	private String apellido;
-	private int matricula;
-	private String curso;
+	protected String nombre;
+	protected String apellido;
+	protected int matricula;
+	protected String curso;
 	
 	public Estudiante(String n, String a) {
 		nombre = n;
